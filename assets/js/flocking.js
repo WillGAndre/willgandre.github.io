@@ -12,7 +12,7 @@ const BOID_STROKE = 5;
 const BOIDS = 100;
 
 const WIDTH = 400;
-const HEIGHT = 640;
+const HEIGHT = 610;
 
 class Boid {
     constructor() {
