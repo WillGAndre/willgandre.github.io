@@ -12,7 +12,7 @@ const BOID_STROKE = 5;
 const BOIDS = 100;
 
 const WIDTH = 400;
-const HEIGHT = 600;
+const HEIGHT = 640;
 
 class Boid {
     constructor() {
@@ -131,14 +131,10 @@ class Boid {
 const flock = [];
 
 function setup() {
-    createCanvas(WIDTH, windowHeight);
+    createCanvas(WIDTH, HEIGHT);
     for (let i = 0; i < BOIDS; i++) {
         flock.push(new Boid());
     }
-}
-
-function windowResized() {
-    resizeCanvas(WIDTH, windowHeight);
 }
 
 function draw() {
