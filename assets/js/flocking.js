@@ -1,11 +1,8 @@
 const MAX_FORCE = 0.2;
 const MAX_SPEED = 2;
 
-// Steering towards the average heading of local boids
 const ALIGN_PERCEP_RADIUS = 50;
-// Steering to avoid crowding local boids
 const SEPAR_PERCEP_RADIUS = 50;
-// Steering towards the average position (center of mass) of local boids
 const COHES_PERCEP_RADIUS = 80;
 
 const BOID_STROKE = 5;
@@ -24,18 +21,11 @@ class Boid {
         this.maxSpeed = MAX_SPEED;
     }
 
-    // Check for edges and wrap around
     edges() {
-        if (this.position.x > width) {
-            this.position.x = 0;
-        } else if (this.position.x < 0) {
-            this.position.x = width;
-        }
-        if (this.position.y > height) {
-            this.position.y = 0;
-        } else if (this.position.y < 0) {
-            this.position.y = height;
-        }
+        if (this.position.x > width) this.position.x = 0;
+        else if (this.position.x < 0) this.position.x = width;
+        if (this.position.y > height) this.position.y = 0;
+        else if (this.position.y < 0) this.position.y = height;
     }
 
     align(boids) {
@@ -66,7 +56,7 @@ class Boid {
             let d = dist(this.position.x, this.position.y, other.position.x, other.position.y);
             if (other != this && d < perceptionRadius) {
                 let diff = p5.Vector.sub(this.position, other.position);
-                diff.div(d); // Weight by distance
+                diff.div(d);
                 steering.add(diff);
                 total++;
             }
@@ -101,7 +91,6 @@ class Boid {
         return steering;
     }
 
-    // Update the boid's position and velocity
     update() {
         this.position.add(this.velocity);
         this.velocity.add(this.acceleration);
@@ -109,14 +98,12 @@ class Boid {
         this.acceleration.mult(0);
     }
 
-    // Display the boid on the canvas
     show() {
         strokeWeight(BOID_STROKE);
         stroke(255);
         point(this.position.x, this.position.y);
     }
 
-    // Apply the flocking behaviors
     flock(boids) {
         let alignment = this.align(boids);
         let cohesion = this.cohesion(boids);
@@ -131,7 +118,24 @@ class Boid {
 const flock = [];
 
 function setup() {
-    createCanvas(WIDTH, HEIGHT);
+    // Create and append the container dynamically
+    let body = select('body');
+    let container = createElement('div');
+    container.id('flocking-container');
+    container.style('position', 'relative');
+    container.style('width', '400px');
+    container.style('height', '610px');
+    body.child(container);
+
+    let canvas = createCanvas(WIDTH, HEIGHT);
+    canvas.parent('flocking-container');
+
+    // Set canvas styles to be in the background
+    canvas.style('position', 'absolute');
+    canvas.style('top', '0');
+    canvas.style('left', '0');
+    canvas.style('z-index', '-1');
+
     for (let i = 0; i < BOIDS; i++) {
         flock.push(new Boid());
     }
