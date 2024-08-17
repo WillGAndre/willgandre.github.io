@@ -8,6 +8,9 @@ const COHES_PERCEP_RADIUS = 80;
 const BOID_STROKE = 5;
 const BOIDS = 100;
 
+const WIDTH = 400;
+const HEIGHT = 610;
+
 class Boid {
     constructor() {
         this.position = createVector(random(width), random(height));
@@ -119,17 +122,19 @@ function setup() {
     let body = select('body');
     let container = createElement('div');
     container.id('flocking-container');
-    container.style('position', 'absolute');
-    container.style('top', '0');
-    container.style('left', '0');
+    container.style('position', 'relative');
     container.style('width', '100%');
     container.style('height', '100%');
-    container.style('z-index', '-1');  // Ensures the container stays in the background
     body.child(container);
 
-    // Create the canvas to fill the entire window
-    let canvas = createCanvas(windowWidth, windowHeight);
+    let canvas = createCanvas(WIDTH, HEIGHT);
     canvas.parent('flocking-container');
+
+    // Set canvas styles to be in the background
+    canvas.style('position', 'absolute');
+    canvas.style('top', '0');
+    canvas.style('left', '0');
+    canvas.style('z-index', '-1');
 
     for (let i = 0; i < BOIDS; i++) {
         flock.push(new Boid());
@@ -144,8 +149,4 @@ function draw() {
         boid.update();
         boid.show();
     }
-}
-
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);  // Adjust canvas size when window is resized
 }
