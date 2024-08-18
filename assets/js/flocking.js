@@ -115,29 +115,22 @@ class Boid {
 const flock = [];
 
 function setup() {
-    // Create and append the container dynamically
-    let body = select('body');
-    let container = createElement('div');
-    container.id('flocking-container');
-    container.style('position', 'absolute');
-    container.style('top', '0');
-    container.style('left', '0');
-    container.style('width', '100%');
-    container.style('height', '100%');
-    container.style('z-index', '-1');  // Ensures the container stays in the background
-    body.child(container);
-
-    // Create the canvas to fill the entire window
+    // Set up canvas to fill the entire window
     let canvas = createCanvas(windowWidth, windowHeight);
-    canvas.parent('flocking-container');
+    canvas.position(0, 0);
+    canvas.style('z-index', '-1');  // Ensure canvas stays behind the content
+    canvas.style('position', 'fixed');  // Make it cover the entire viewport
+    canvas.style('top', '0');
+    canvas.style('left', '0');
 
+    // Create flock of boids
     for (let i = 0; i < BOIDS; i++) {
         flock.push(new Boid());
     }
 }
 
 function draw() {
-    background(51);  // Black background
+    background(51);  // Dark background for contrast
     for (let boid of flock) {
         boid.edges();
         boid.flock(flock);
@@ -147,6 +140,5 @@ function draw() {
 }
 
 function windowResized() {
-    // Resize the canvas to fit the window when resized
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight);  // Ensure the canvas resizes with the window
 }
