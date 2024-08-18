@@ -115,11 +115,11 @@ class Boid {
 const flock = [];
 
 function setup() {
-    // Set up canvas to fill the entire window
+    // Create canvas and set to cover the entire window
     let canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
     canvas.style('z-index', '-1');  // Ensure canvas stays behind the content
-    canvas.style('position', 'fixed');  // Make it cover the entire viewport
+    canvas.style('position', 'fixed');  // Make canvas cover entire window
     canvas.style('top', '0');
     canvas.style('left', '0');
 
@@ -132,13 +132,14 @@ function setup() {
 function draw() {
     background(51);  // Dark background for contrast
     for (let boid of flock) {
-        boid.edges();
-        boid.flock(flock);
-        boid.update();
-        boid.show();
+        boid.edges();  // Allow boids to wrap around the edges
+        boid.flock(flock);  // Boids flocking behavior
+        boid.update();  // Update boid's position
+        boid.show();  // Display boid
     }
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);  // Ensure the canvas resizes with the window
+    // Resize canvas when the window is resized
+    resizeCanvas(windowWidth, windowHeight);
 }
