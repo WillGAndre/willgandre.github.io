@@ -1,6 +1,5 @@
 # <span style="color: white">⎇</span>
-
-##### <span style="color: white; font-size: 2em"><a href="https://github.com/WillGAndre/explo">explo/</a></span><p style="color: white">(exploit development)</p>
+##### ⤷ <span style="color: white; font-size: 2em"><a href="https://github.com/WillGAndre/explo">explo/</a></span>
 
 <style>
 .dot-square {
@@ -41,13 +40,11 @@
 }
 </style>
 
-<br>
-
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=WillGAndre&repo=aposturas&theme=apprentice)](https://github.com/WillGAndre/aposturas)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=WillGAndre&repo=dt-kygn&theme=apprentice)](https://github.com/WillGAndre/dt-kygn)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=WillGAndre&repo=rs-blockchain&theme=apprentice)](https://github.com/WillGAndre/rs-blockchain)
 
-<div class="dot-square">
+<div class="dot-square" style="margin:0 auto;">
   <span class="dot d1">.</span>
   <span class="dot d2">.</span>
   <span class="dot d3">.</span>
@@ -78,9 +75,4 @@
   <span class="dot d13">.</span>
   <span class="dot d14">.</span>
   <span class="dot d15">.</span>
-  <span class="dot d1">.</span>
-  <span class="dot d2">.</span>
-  <span class="dot d3">.</span>
-  <span class="dot d4">.</span>
-  <span class="dot d5">.</span>
 </div>
