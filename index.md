@@ -1,6 +1,6 @@
 # <span style="color: white">⎇</span>
 
-##### <span style="color: white; font-size: 2em"><a href="https://github.com/WillGAndre/explo">explo/</a></span> (exploit development)
+##### <span style="color: white; font-size: 2em"><a href="https://github.com/WillGAndre/explo">explo/</a></span><p style="color: white">(exploit development)</p>
 
 <style>
 .dot-square {
@@ -83,22 +83,4 @@
   <span class="dot d3">.</span>
   <span class="dot d4">.</span>
   <span class="dot d5">.</span>
-  <span class="dot d6">.</span>
-  <span class="dot d7">.</span>
-  <span class="dot d8">.</span>
-  <span class="dot d9">.</span>
-  <span class="dot d10">.</span>
-  <span class="dot d11">.</span>
-  <span class="dot d12">.</span>
-  <span class="dot d13">.</span>
-  <span class="dot d14">.</span>
-  <span class="dot d15">.</span>
-  <span class="dot d1">.</span>
-  <span class="dot d2">.</span>
-  <span class="dot d3">.</span>
-  <span class="dot d4">.</span>
-  <span class="dot d5">.</span>
-  <span class="dot d6">.</span>
-  <span class="dot d7">.</span>
-  <span class="dot d8">.</span>
 </div>
